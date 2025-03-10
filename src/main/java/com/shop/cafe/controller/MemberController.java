@@ -46,11 +46,37 @@ public class MemberController {
 		System.out.println(m);
 		try {
 			memberService.insertMember(m);
+			return m.getNickname()+"님 가입을 환영합니다";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "회원 가입 실패";
+		}
+	}
+	
+	@PostMapping("updateMember")
+	public String updateMember(@RequestBody Member m) {
+		System.out.println(m);
+		try {
+			memberService.updateMember(m);
 			return "ok";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return "nickname이나 email이 중복됩니다";
+			return "email과 pwd 확인해 주세요";
+		}
+	}
+	
+	@PostMapping("deleteMember")
+	public String deleteMember(@RequestBody String email) {
+		System.out.println(email);
+		try {
+			memberService.deleteMember(email);
+			return "ok";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "email과 pwd 확인해 주세요";
 		}
 	}
 

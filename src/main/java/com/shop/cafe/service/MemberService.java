@@ -12,11 +12,20 @@ public class MemberService {
 	MemberDao memberDao;
 	
 	public Member login(Member m) throws Exception {
+		
 		return memberDao.login(m);
 	}
 	
 	public void insertMember(Member m) throws Exception{
 		memberDao.insertMember(m);
+	}
+	
+	public void updateMember(Member m) throws Exception{
+		memberDao.updateMember(m);
+	}
+	
+	public void deleteMember(String email) throws Exception{
+		memberDao.deleteMember(email);
 	}
 
 }

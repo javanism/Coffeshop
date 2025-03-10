@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.shop.cafe.dao.ReviewDao">
+
+  <select id="getRecentReviews" resultType="Review" parameterType="Review">
+    select * from review where prodcode=#{prodcode} order by reviewNo desc limit 3
+  </select>
+  
+  <insert id="insertReview" parameterType="Review">
+  	insert into review(prodcode, reviewer, review) values(#{prodcode},#{reviewer},#{review})
+  </insert>
+  
+</mapper>
