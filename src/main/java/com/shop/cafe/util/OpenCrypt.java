@@ -9,11 +9,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-public class OpenCrypt {
-	public static void main(String[] args) {
-		getSHA256("a", "");
-		getSHA256("a", "salt");
-	}
+public class OpenCrypt {	
 
 	 public static byte[] getSHA256(String source, String salt) {
            byte byteData[]=null;
